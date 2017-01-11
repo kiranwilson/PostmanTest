@@ -1,0 +1,54 @@
+{
+	"id": "60fde90c-2c57-9e88-9ce3-ad82c6388c8d",
+	"name": "VofoxOne",
+	"description": "",
+	"order": [
+		"bc139044-d498-176f-7111-2ff389d3edc7",
+		"461c913e-460b-9a01-7c50-f3e54ee26145"
+	],
+	"folders": [],
+	"timestamp": 1483940731802,
+	"owner": "1358078",
+	"public": false,
+	"requests": [
+		{
+			"id": "461c913e-460b-9a01-7c50-f3e54ee26145",
+			"headers": "",
+			"url": "{{base_url}}/api/Departments",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "60fde90c-2c57-9e88-9ce3-ad82c6388c8d",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get All Departments",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1483941270508,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "bc139044-d498-176f-7111-2ff389d3edc7",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{base_url}}/api/Departments",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var body = JSON.parse(request.data);\nif(body.DepartmentName==='')\n{\n    tests[\"Department Name Required\"] = body.DepartmentName = '';\n}\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483957913045,
+			"name": "Post New Departments",
+			"description": "",
+			"collectionId": "60fde90c-2c57-9e88-9ce3-ad82c6388c8d",
+			"responses": [],
+			"rawModeData": "{\n    \"DepartmentName\": \"\",\n    \"Description\": \"Test\",\n    \"IsActive\": true,\n    \"lstSubDepartment\": null\n}\n"
+		}
+	]
+}
