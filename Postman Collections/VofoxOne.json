@@ -1,0 +1,87 @@
+{
+  "variables": [],
+  "info": {
+    "name": "VofoxOne",
+    "_postman_id": "d31c8d9f-5aef-6747-412f-65eb1a3e08d6",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "7cf06410-4547-5721-0a0a-dcdb7bcec2cf",
+      "name": "Post New Departments",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var body = JSON.parse(request.data);",
+              "if(body.DepartmentName==='')",
+              "{",
+              "    tests[\"Department Name Required\"] = body.DepartmentName = '';",
+              "}",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{base_url}}/api/Departments",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"DepartmentName\": \"\",\n    \"Description\": \"Test\",\n    \"IsActive\": true,\n    \"lstSubDepartment\": null\n}\n"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "17a07f05-a8ca-738c-b6fc-30948d633197",
+      "name": "Get All Departments",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "console.log(\"Test\");",
+              "",
+              "var objec = eval(postman.getGlobalVariable(\"globalFunctions\"));",
+              "",
+              "objec.testcaseStartLog();",
+              "objec.testcaseEndLog();",
+              "",
+              "var val = objec.test();",
+              "console.log(val);",
+              "",
+              "tests[\"Return value is equal to 10\"] = val ===11;",
+              "",
+              "//globalFunctions = { testcaseStartLog: function() { console.log(\"Start\"); }, testcaseEndLog: function() { console.log(\"End\"); }, test:function() {return 10; } }"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{base_url}}/api/Departments",
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "description": ""
+      },
+      "response": []
+    }
+  ]
+}
