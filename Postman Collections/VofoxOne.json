@@ -66,6 +66,8 @@
               "",
               "tests[\"Return value is equal to 10\"] = val ===11;",
               "",
+              "console.log(\"Vofox\")",
+              "",
               "//globalFunctions = { testcaseStartLog: function() { console.log(\"Start\"); }, testcaseEndLog: function() { console.log(\"End\"); }, test:function() {return 10; } }"
             ]
           }
