@@ -58,11 +58,11 @@
               "",
               "",
               "",
-              "var o = eval(postman.getGlobalVariable(\"Test\"));",
+              "var o = postman.getGlobalVariable(\"Test\");",
               "",
               "console.log(o);",
               "",
-              "tests[\"Return value is equal to 10\"] = o ===101;",
+              "tests[\"Return value is equal to 101\"] = o =101;",
               "",
               "",
               "//globalFunctions = { testcaseStartLog: function() { console.log(\"Start\"); }, testcaseEndLog: function() { console.log(\"End\"); }, test:function() {return 10; } }"
