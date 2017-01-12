@@ -62,7 +62,7 @@
               "",
               "console.log(o);",
               "",
-              "tests[\"Return value is equal to 10\"] = o ===11;",
+              "tests[\"Return value is equal to 10\"] = o ===101;",
               "",
               "",
               "//globalFunctions = { testcaseStartLog: function() { console.log(\"Start\"); }, testcaseEndLog: function() { console.log(\"End\"); }, test:function() {return 10; } }"
