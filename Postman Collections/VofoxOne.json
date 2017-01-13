@@ -69,7 +69,9 @@
               "var val = objec.test();",
               "console.log(val);",
               "",
-              "tests[\"Return value is equal to 10\"] = val ===10;"
+              "tests[\"Return value is equal to 10\"] = val ===10;",
+              "",
+              ""
             ]
           }
         },
@@ -81,8 +83,7 @@
               "var value = \"globalFunctions = { testcaseStartLog: function() { console.log(\"+'\"Start\"'+\"); }, testcaseEndLog: function() { console.log(\"+'\"End\"'+\"); }, test:function() {return 10; } }\";",
               "",
               "postman.setEnvironmentVariable(\"globalFunctions\",value);",
-              "",
-              "//postman.setGlobalVariable(\"globalFunctions\",value);"
+              ""
             ]
           }
         }
