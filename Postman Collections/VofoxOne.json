@@ -56,7 +56,7 @@
               "",
               "console.log(\"Test\");",
               "",
-              "var objec = eval(postman.getGlobalVariable(\"globalFunctions\"));",
+              "var objec = eval(postman.getEnvironmentVariable(\"globalFunctions\"));",
               "",
               "objec.testcaseStartLog();",
               "objec.testcaseEndLog();",
@@ -66,14 +66,27 @@
               "",
               "tests[\"Return value is equal to 10\"] = val ===11;",
               "",
-              "var o = eval(postman.getGlobalVariable(\"Test\"));",
+              "//var o = eval(postman.getGlobalVariable(\"Test\"));",
               "",
-              "console.log(o);",
+              "//console.log(o);",
               "",
-              "tests[\"Return value is equal to 10\"] = o ===11;",
+              "//tests[\"Return value is equal to 10\"] = o ===11;",
               "",
               "",
               "//globalFunctions = { testcaseStartLog: function() { console.log(\"Start\"); }, testcaseEndLog: function() { console.log(\"End\"); }, test:function() {return 10; } }"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var value = \"globalFunctions = { testcaseStartLog: function() { console.log(\"+'\"Start\"'+\"); }, testcaseEndLog: function() { console.log(\"+'\"End\"'+\"); }, test:function() {return 10; } }\";",
+              "",
+              "postman.setEnvironmentVariable(\"globalFunctions\",value);",
+              "",
+              "//postman.setGlobalVariable(\"globalFunctions\",value);"
             ]
           }
         }
