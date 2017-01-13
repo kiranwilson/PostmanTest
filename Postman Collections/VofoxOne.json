@@ -64,7 +64,7 @@
               "var val = objec.test();",
               "console.log(val);",
               "",
-              "tests[\"Return value is equal to 10\"] = val ===11;",
+              "tests[\"Return value is equal to 10\"] = val ===10;",
               "",
               "//var o = eval(postman.getGlobalVariable(\"Test\"));",
               "",
