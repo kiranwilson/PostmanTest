@@ -8,6 +8,12 @@
   },
   "item": [
     {
+      "_postman_id": "ce3c2d1e-07d2-d192-e70e-ab8ddb00713c",
+      "name": "Test Cases",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "7cf06410-4547-5721-0a0a-dcdb7bcec2cf",
       "name": "Post New Departments",
       "event": [
