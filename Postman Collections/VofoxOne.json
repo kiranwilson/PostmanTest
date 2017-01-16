@@ -100,58 +100,6 @@
         "description": ""
       },
       "response": []
-    },
-    {
-      "_postman_id": "5c821458-c79f-1860-642d-af1de0e84333",
-      "name": "Get All Departments copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "console.log(\"Test\");",
-              "",
-              "var objec = eval(postman.getEnvironmentVariable(\"globalFunctions\"));",
-              "objec.response200();",
-              "objec.response401();",
-              "objec.testcaseStartLog();",
-              "objec.testcaseEndLog();",
-              "",
-              "",
-              "var val = objec.test();",
-              "console.log(val);",
-              "",
-              "tests[\"Return value is equal to 10\"] = val ===10;",
-              "",
-              ""
-            ]
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var value = \"globalFunctions = { testcaseStartLog: function() { console.log(\"+'\"Start\"'+\"); }, testcaseEndLog: function() { console.log(\"+'\"End\"'+\"); }, test:function() {return 10; }, response200: function() { tests[\"+'\"Authorized User\"'+\"] = responseCode.code === 200;}, response401: function() {tests[\"+'\"User without authorization\"'+ \"] = responseCode.code === 401;} }\";",
-              "",
-              "postman.setEnvironmentVariable(\"globalFunctions\",value);",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{base_url}}/api/Departments",
-        "method": "GET",
-        "header": [],
-        "body": {
-          "mode": "formdata",
-          "formdata": []
-        },
-        "description": ""
-      },
-      "response": []
     }
   ]
 }
