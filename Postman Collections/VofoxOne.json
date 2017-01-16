@@ -58,6 +58,8 @@
           "script": {
             "type": "text/javascript",
             "exec": [
+              "var objec2 = eval(postman.getEnvironmentVariable(\"gfunc\"));",
+              "objec2.response200();",
               "",
               "console.log(\"Test\");",
               "",
@@ -83,7 +85,11 @@
               "var value = \"globalFunctions = { testcaseStartLog: function() { console.log(\"+'\"Start\"'+\"); }, testcaseEndLog: function() { console.log(\"+'\"End\"'+\"); }, test:function() {return 10; } }\";",
               "",
               "postman.setEnvironmentVariable(\"globalFunctions\",value);",
-              ""
+              "",
+              "",
+              "var value2 = \"gfunc = { response200: function() { tests[\"+'\"Authorized User\"'+\"] = responseCode.code === 200;}}\";",
+              "",
+              "postman.setEnvironmentVariable(\"gfunc\",value2);"
             ]
           }
         }
