@@ -84,8 +84,6 @@
               "var value = \"globalFunctions = { testcaseStartLog: function() { console.log(\"+'\"Start\"'+\"); }, testcaseEndLog: function() { console.log(\"+'\"End\"'+\"); }, test:function() {return 10; }, response200: function() { tests[\"+'\"Authorized User\"'+\"] = responseCode.code === 200;}, response401: function() {tests[\"+'\"User without authorization\"'+ \"] = responseCode.code === 401;} }\";",
               "",
               "postman.setEnvironmentVariable(\"globalFunctions\",value);",
-              "",
-              "",
               ""
             ]
           }
