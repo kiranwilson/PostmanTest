@@ -116,7 +116,11 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "tests[\"Authorized User\"] = responseCode.code === 200;"
+              "var objec = eval(postman.getEnvironmentVariable(\"globalFunctions\"));",
+              "",
+              "objec.withAuthorization();",
+              "objec.withoutAuthorization();",
+              ""
             ]
           }
         },
@@ -156,7 +160,12 @@
               "postman.setEnvironmentVariable('authorization', 'Bearer ' + jwt);",
               "",
               "// Set the reference ID.",
-              "postman.setEnvironmentVariable('reference_id', method1.getReferenceId());"
+              "postman.setEnvironmentVariable('reference_id', method1.getReferenceId());",
+              "",
+              "",
+              "var value = \"globalFunctions = { withAuthorization: function() { tests[\"+'\"Authorized User\"'+\"] = responseCode.code === 200;}, withoutAuthorization: function() {tests[\"+'\"User without authorization\"'+ \"] = responseCode.code === 401;} }\";",
+              "",
+              "postman.setEnvironmentVariable(\"globalFunctions\",value);"
             ]
           }
         }
